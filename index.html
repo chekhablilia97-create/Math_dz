@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Math DZ | دروس الرياضيات</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f5f7fb;color:#172033}
+header{background:#173b70;color:white;padding:28px 18px;text-align:center}
+nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:15px;background:#fff}
+nav a{color:#174b8c;text-decoration:none;font-weight:bold}
+main{max-width:900px;margin:25px auto;padding:0 16px}
+.hero,.card{background:white;border-radius:16px;padding:22px;margin:15px 0;box-shadow:0 4px 16px #0001}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+button{background:#2463ad;color:white;border:0;border-radius:9px;padding:10px 16px;cursor:pointer}
+footer{text-align:center;padding:24px;color:#667}
+</style></head>
+<body>
+<header><h1>Math DZ</h1><p id="tag">فضاء تعليمي للرياضيات — دروس، تمارين وحلول</p><button onclick="changeLang()">العربية / English / Français</button></header>
+<nav><a href="#levels">المستويات</a><a href="#bac">البكالوريا</a><a href="#about">حول الموقع</a></nav>
+<main><section class="hero"><h2 id="welcome">مرحبا بكم في Math DZ</h2><p id="intro">موردك لمراجعة الرياضيات في التعليم الثانوي الجزائري.</p></section>
+<section id="levels"><h2>المستويات الدراسية</h2><div class="grid">
+<div class="card"><h3>الأولى ثانوي</h3><p>دروس وتمارين تطبيقية</p><a href="#">استكشف الدروس</a></div>
+<div class="card"><h3>الثانية ثانوي</h3><p>ملخصات وتمارين محلولة</p><a href="#">استكشف الدروس</a></div>
+<div class="card"><h3>الثالثة ثانوي</h3><p>تحضير شامل للبكالوريا</p><a href="#">استكشف الدروس</a></div></div></section>
+<section id="bac" class="card"><h2>فضاء البكالوريا</h2><p>مواضيع سابقة، حلول نموذجية، ومراجعة حسب الشعب.</p></section>
+<section id="about" class="card"><h2>حول Math DZ</h2><p>منصة تعليمية لمساعدة التلاميذ على فهم الرياضيات والتدرب عليها.</p></section></main>
+<footer>© Math DZ</footer>
+<script>
+let lang=0;const data=[
+{dir:"rtl",tag:"فضاء تعليمي للرياضيات — دروس، تمارين وحلول",welcome:"مرحبا بكم في Math DZ",intro:"موردك لمراجعة الرياضيات في التعليم الثانوي الجزائري.",levels:"المستويات الدراسية",bac:"فضاء البكالوريا",about:"حول Math DZ",nav:["المستويات","البكالوريا","حول الموقع"],cards:["الأولى ثانوي","الثانية ثانوي","الثالثة ثانوي"]},
+{dir:"ltr",tag:"A learning space for mathematics — lessons, exercises and solutions",welcome:"Welcome to Math DZ",intro:"Your resource for Algerian secondary-school mathematics.",levels:"School levels",bac:"Baccalaureate space",about:"About Math DZ",nav:["Levels","Baccalaureate","About"],cards:["1st Secondary","2nd Secondary","3rd Secondary"]},
+{dir:"ltr",tag:"Espace éducatif de mathématiques — cours, exercices et solutions",welcome:"Bienvenue sur Math DZ",intro:"Votre ressource pour les mathématiques du secondaire algérien.",levels:"Niveaux scolaires",bac:"Espace Baccalauréat",about:"À propos de Math DZ",nav:["Niveaux","Baccalauréat","À propos"],cards:["1re secondaire","2e secondaire","3e secondaire"]}];
+function changeLang(){lang=(lang+1)%3;let d=data[lang];document.documentElement.dir=d.dir;document.documentElement.lang=["ar","en","fr"][lang];document.getElementById("tag").textContent=d.tag;document.getElementById("welcome").textContent=d.welcome;document.getElementById("intro").textContent=d.intro;document.querySelectorAll("nav a").forEach((a,i)=>a.textContent=d.nav[i]);document.querySelectorAll("#levels h3").forEach((h,i)=>h.textContent=d.cards[i]);document.querySelector("#levels h2").textContent=d.levels;document.querySelector("#bac h2").textContent=d.bac;document.querySelector("#about h2").textContent=d.about;}
+</script></body></html>
